@@ -1,15 +1,4 @@
 import { useEffect, useRef } from "react";
-
-/**
- * PriceChart - draws a simple line chart of price history on a
- * <canvas>. This is a good example of React talking to the raw DOM:
- * useRef() gets a handle on the actual <canvas> element, and
- * useEffect() re-draws it whenever the `history` prop changes or the
- * window is resized.
- *
- * Props:
- *   - history: array of { date, price } points, oldest first
- */
 function PriceChart({ history }) {
   const canvasRef = useRef(null);
 
@@ -48,7 +37,6 @@ function PriceChart({ history }) {
       const y = (price) =>
         padding.top + ((max - price) / range) * (height - padding.top - padding.bottom);
 
-      // Gridlines + price labels
       ctx.strokeStyle = "#1e293b";
       ctx.lineWidth = 1;
       for (let i = 0; i < 5; i++) {
@@ -65,7 +53,6 @@ function PriceChart({ history }) {
         ctx.fillText(`₹${priceLabel.toLocaleString("en-IN")}`, padding.left - 8, lineY + 4);
       }
 
-      // Line
       ctx.beginPath();
       history.forEach((item, index) => {
         const pointX = x(index);
@@ -77,7 +64,6 @@ function PriceChart({ history }) {
       ctx.lineWidth = 2;
       ctx.stroke();
 
-      // Points + date labels
       history.forEach((item, index) => {
         const pointX = x(index);
         const pointY = y(Number(item.price));
