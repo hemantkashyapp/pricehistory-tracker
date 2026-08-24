@@ -9,19 +9,7 @@ import {
   searchProducts
 } from "../data/products";
 
-/**
- * Home page.
- *
- * State (useState):
- *   - query: the text currently typed in the search box
- *   - activeFilter: the label shown above the "Search Results" section
- *     (either the typed query or a clicked category name)
- *   - searchResults: the array of products matching query/category
- *
- * Effect (useEffect):
- *   - Logs a message once, on mount, just to demonstrate the hook -
- *     everything else here reacts directly to user events instead.
- */
+
 function Home() {
   const [query, setQuery] = useState("");
   const [activeFilter, setActiveFilter] = useState(null);
