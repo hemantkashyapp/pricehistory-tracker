@@ -11,15 +11,6 @@ import {
   getRecommendations
 } from "../data/products";
 
-/**
- * Product detail page.
- *
- * - useParams() reads the :id from the URL (/product/:id)
- * - useState() holds the product currently being shown
- * - useEffect() re-loads the product whenever the id in the URL changes
- *   (e.g. clicking a "Recommended for you" card while already on a
- *   product page)
- */
 function ProductPage() {
   const { id } = useParams();
   const [product, setProduct] = useState(null);
