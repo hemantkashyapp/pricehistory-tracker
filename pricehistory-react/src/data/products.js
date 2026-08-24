@@ -1,31 +1,6 @@
-/*
- * data.js
- * ----------------------------------------------------------------
- * This is the ENTIRE "database" for the project. There is no
- * backend and no third-party API call anywhere in this project.
- * Every product below is a REAL product you can find on Amazon.in
- * or Flipkart.com (title, store and price range match real
- * listings). The price-history points are sample data built around
- * that real current price, since no free/legal API exists that
- * hands out historical pricing - that's normal for a student demo.
- *
- * LINKS: instead of hard-coding a single Amazon "/dp/ASIN" or
- * Flipkart "/p/...?pid=..." URL (which breaks the moment that exact
- * listing is delisted or its ID changes), getProductUrl() below
- * builds a live Amazon.in / Flipkart.com SEARCH link for the
- * product's exact name. That link always works and always lands on
- * the real product, which is more reliable for a classroom demo
- * than a single frozen permalink.
- *
- * Want to add a new product? Just add a new object to the PRODUCTS
- * array below - every page (home page, search, category filters,
- * product page, chart and recommendations) will pick it up
- * automatically.
- * ----------------------------------------------------------------
- */
 
 export const PRODUCTS = [
-    // ------------------------------ ELECTRONICS ------------------------------
+
     {
         id: "boat-rockerz-255-pro-plus",
         title: "boAt Rockerz 255 Pro+ Bluetooth Neckband",
@@ -147,7 +122,6 @@ export const PRODUCTS = [
         ]
     },
 
-    // ------------------------------ HOME & KITCHEN ------------------------------
     {
         id: "toilet-brush",
         title: "Zuku Toilet Cleaning Brush with Holder, Bathroom Set",
@@ -208,8 +182,6 @@ export const PRODUCTS = [
             { date: "2026-08-20", price: 1799 }
         ]
     },
-
-    // ------------------------------ FITNESS ------------------------------
     {
         id: "gym-combo",
         title: "3-in-1 Gym Combo Adjustable Dumbbells Set",
@@ -256,7 +228,6 @@ export const PRODUCTS = [
         ]
     },
 
-    // ------------------------------ FASHION ------------------------------
     {
         id: "wildcraft-backpack",
         title: "Wildcraft Casual Backpack 30L, Water Resistant",
@@ -333,7 +304,6 @@ export const PRODUCTS = [
         ]
     },
 
-    // ------------------------------ GROOMING ------------------------------
     {
         id: "nike-deo-combo",
         title: "Nike Women Deodorant Spray Combo (Pack of 3)",
@@ -395,7 +365,6 @@ export const PRODUCTS = [
         ]
     },
 
-    // ------------------------------ AUTOMOTIVE ------------------------------
     {
         id: "full-face-helmet",
         title: "Studds Thunder Full Face Helmet D8 with Visor",
@@ -413,21 +382,11 @@ export const PRODUCTS = [
     }
 ];
 
-/* ------------------------------ HELPERS ------------------------------ */
-
-// Builds a placeholder product image on the fly, so the project never
-// depends on any external image API or downloaded image files.
 export function getProductImage(product) {
     const label = encodeURIComponent(product.title.split(" ").slice(0, 3).join(" "));
     return `https://placehold.co/400x400/1e293b/94a3b8?text=${label}`;
 }
 
-// Builds a live Amazon.in / Flipkart.com SEARCH link for this exact
-// product name. Deliberately NOT a hard-coded "/dp/ASIN" or
-// "/p/...?pid=..." URL - those go dead the moment that one listing
-// is removed or its ID changes. A search link always loads and
-// always shows the real product (see the note at the top of this
-// file for the full reasoning).
 export function getProductUrl(product) {
     const query = encodeURIComponent(product.title);
 
@@ -438,8 +397,6 @@ export function getProductUrl(product) {
     return `https://www.amazon.in/s?k=${query}`;
 }
 
-// A product's "highest" and "lowest" ever recorded price, including
-// today's current price.
 export function getPriceStats(product) {
     const prices = product.history.map(point => point.price).concat(product.currentPrice);
     return {
@@ -464,7 +421,6 @@ export function getCategories() {
     return [...new Set(PRODUCTS.map(product => product.category))];
 }
 
-// Simple text search across title + category.
 export function searchProducts(query) {
     const q = query.trim().toLowerCase();
     if (!q) return [];
@@ -473,9 +429,6 @@ export function searchProducts(query) {
         product.category.toLowerCase().includes(q)
     );
 }
-
-// Recommendations: other products from the same category, falling back
-// to a handful of other products if the category is too small.
 export function getRecommendations(product, count = 4) {
     const sameCategory = PRODUCTS.filter(
         p => p.id !== product.id && p.category === product.category
@@ -490,8 +443,6 @@ export function getRecommendations(product, count = 4) {
     return [...sameCategory, ...others].slice(0, count);
 }
 
-// "Deals and Drops": the products with the biggest percentage price drop
-// from their highest recorded price down to today's price.
 export function getBiggestDrops(count = 6) {
     return [...PRODUCTS]
         .map(product => {
