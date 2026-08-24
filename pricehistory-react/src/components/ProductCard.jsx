@@ -2,13 +2,6 @@ import { Link } from "react-router-dom";
 import { getPriceStats, getProductImage, getProductUrl, formatPrice } from "../data/products";
 import WishlistButton from "./WishlistButton";
 
-/**
- * ProductCard - a reusable functional component.
- * Receives a single `product` object as a prop and renders one card.
- * Used on the Home page (Trending, Deals and Drops, Search Results)
- * AND on the Product page (Recommended for you) - one component,
- * reused everywhere instead of repeating markup.
- */
 function ProductCard({ product }) {
   const { highest, lowest } = getPriceStats(product);
 
