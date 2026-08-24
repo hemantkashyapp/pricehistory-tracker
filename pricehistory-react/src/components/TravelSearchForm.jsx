@@ -1,11 +1,5 @@
 import { useState } from "react";
 
-/**
- * TravelSearchForm - a From / To / Date search bar reused by the
- * Flight Compare and Bus Compare pages. There is no backend or
- * travel API here, so submitting just reveals a "coming soon" note
- * instead of faking results.
- */
 function TravelSearchForm({ fromPlaceholder = "From", toPlaceholder = "To" }) {
   const [submitted, setSubmitted] = useState(false);
   const [form, setForm] = useState({ from: "", to: "", date: "" });
