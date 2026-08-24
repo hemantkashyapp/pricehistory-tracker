@@ -27,8 +27,6 @@ button, input { font: inherit; }
     margin: 0 auto;
 }
 
-/* ------------------------------ HEADER ------------------------------ */
-
 .site-header {
     background: var(--card-bg);
     border-bottom: 1px solid var(--border);
@@ -51,7 +49,6 @@ nav { display: flex; gap: 18px; flex-wrap: wrap; justify-content: flex-end; }
 nav a { color: var(--muted); font-size: 14px; white-space: nowrap; }
 nav a:hover { color: var(--accent); }
 
-/* ------------------------------- HERO -------------------------------- */
 
 .hero {
     text-align: center;
@@ -125,7 +122,6 @@ button:hover, .btn-primary:hover { background: var(--accent-dark); }
 .loading-message { color: var(--muted); min-height: 20px; }
 .empty-message { color: var(--muted); }
 
-/* --------------------------- CATEGORY CHIPS --------------------------- */
 
 .category-chips {
     display: flex;
@@ -147,7 +143,6 @@ button:hover, .btn-primary:hover { background: var(--accent-dark); }
 
 .chip:hover { color: var(--text); border-color: var(--accent); background: var(--card-bg); }
 
-/* --------------------------- CATEGORY CARDS ---------------------------- */
 
 .category-card-grid {
     display: grid;
@@ -193,7 +188,6 @@ button:hover, .btn-primary:hover { background: var(--accent-dark); }
     color: var(--text);
 }
 
-/* ----------------------------- TRAVEL CARDS ----------------------------- */
 
 .travel-card-grid {
     display: grid;
@@ -235,7 +229,6 @@ button:hover, .btn-primary:hover { background: var(--accent-dark); }
 .travel-card-title { font-size: 16px; font-weight: 700; color: var(--text); }
 .travel-card-desc { font-size: 13px; color: var(--muted); }
 
-/* ---------------------------- TRAVEL SEARCH ----------------------------- */
 
 .travel-search { margin-top: 10px; }
 
@@ -269,7 +262,6 @@ button:hover, .btn-primary:hover { background: var(--accent-dark); }
     font-size: 14px;
 }
 
-/* ------------------------------- STORES --------------------------------- */
 
 .store-grid {
     display: grid;
@@ -311,7 +303,6 @@ button:hover, .btn-primary:hover { background: var(--accent-dark); }
 
 .store-card-name { font-size: 14px; font-weight: 600; color: var(--text); }
 
-/* ------------------------------ WISHLIST -------------------------------- */
 
 .wishlist-btn {
     position: absolute;
@@ -334,7 +325,6 @@ button:hover, .btn-primary:hover { background: var(--accent-dark); }
 .wishlist-btn:hover { color: var(--high); border-color: var(--high); }
 .wishlist-btn.is-active { color: var(--high); border-color: var(--high); }
 
-/* ------------------------------ SECTIONS ------------------------------ */
 
 .section-heading {
     display: flex;
@@ -346,7 +336,6 @@ button:hover, .btn-primary:hover { background: var(--accent-dark); }
 .section-heading h2 { margin: 0; font-size: 22px; }
 .section-heading .secondary-text { margin: 4px 0 0; }
 
-/* ------------------------------ CARD GRID ------------------------------ */
 
 .results-grid {
     display: grid;
@@ -453,7 +442,6 @@ button:hover, .btn-primary:hover { background: var(--accent-dark); }
     padding: 10px 8px;
 }
 
-/* ---------------------------- PRODUCT PAGE ---------------------------- */
 
 .product-page { padding: 35px 0 60px; }
 .back-link { color: var(--accent); display: inline-block; margin-bottom: 25px; }
@@ -546,8 +534,7 @@ button:hover, .btn-primary:hover { background: var(--accent-dark); }
     overflow: hidden;
     clip: rect(0,0,0,0);
 }
-
-/* ----------------------------- RESPONSIVE ------------------------------ */
+]
 
 @media (max-width: 900px) {
     .results-grid { grid-template-columns: repeat(2, 1fr); }
