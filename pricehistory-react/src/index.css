@@ -502,7 +502,6 @@ button:hover, .btn-primary:hover { background: var(--accent-dark); }
 
 .recommendations-section { margin-top: 45px; padding-bottom: 30px; }
 
-/* ------------------------------- 404 ---------------------------------- */
 
 .not-found {
     min-height: 70vh;
@@ -516,7 +515,6 @@ button:hover, .btn-primary:hover { background: var(--accent-dark); }
 
 .error-code { color: var(--accent); font-size: 72px; font-weight: 700; margin: 0; }
 
-/* ------------------------------ FOOTER --------------------------------- */
 
 .site-footer {
     background: var(--card-bg);
