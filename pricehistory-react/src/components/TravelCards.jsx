@@ -1,9 +1,5 @@
 import { Link } from "react-router-dom";
 
-/**
- * TravelCards - two promo cards on the homepage linking to the
- * Flight Compare and Bus Compare pages.
- */
 function TravelCards() {
   return (
     <div className="travel-card-grid">
