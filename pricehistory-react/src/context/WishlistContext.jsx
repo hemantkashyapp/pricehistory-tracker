@@ -1,12 +1,7 @@
 import { createContext, useContext, useEffect, useState } from "react";
 import { getAllProducts } from "../data/products";
 
-/**
- * WishlistContext - stores the list of wishlisted product ids in
- * localStorage so it survives page reloads. Any component can read
- * or update the wishlist via the useWishlist() hook below instead of
- * passing props down through every page.
- */
+
 const STORAGE_KEY = "priceHistoryWishlist";
 const WishlistContext = createContext(null);
 
