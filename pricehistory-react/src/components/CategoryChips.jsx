@@ -1,12 +1,3 @@
-/**
- * CategoryChips - a grid of clickable category cards (icon + name).
- * Kept the original component name/props so Home.jsx and its
- * category-filter behaviour didn't need to change - only the markup
- * and styling moved from small pill "chips" to cards.
- * Props:
- *   - categories: array of category name strings
- *   - onSelect: function(category) called when a card is clicked
- */
 const CATEGORY_ICONS = {
   "Electronics": "\u{1F4BB}",
   "Home & Kitchen": "\u{1F3E0}",
