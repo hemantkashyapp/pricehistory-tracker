@@ -1,10 +1,5 @@
 import { useWishlist } from "../context/WishlistContext";
 
-/**
- * WishlistButton - a small heart toggle placed on a ProductCard.
- * Reads/writes the shared wishlist context, so its filled/empty
- * state is always in sync with the /wishlist page.
- */
 function WishlistButton({ productId }) {
   const { isWishlisted, toggleWishlist } = useWishlist();
   const active = isWishlisted(productId);
